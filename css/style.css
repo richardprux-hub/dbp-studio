@@ -1,0 +1,1749 @@
+/* ==============================
+   RESET
+================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #F8F7F2;
+    color: #1F5A42;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ==============================
+   CORES / VARIÁVEIS
+================================= */
+
+:root {
+    --verde: #2E7D5B;
+    --verde-escuro: #1F5A42;
+    --verde-claro: #E5F1EB;
+    --off-white: #F8F7F2;
+    --branco: #FFFFFF;
+    --texto: #5F665F;
+
+    /* Cores da página Pilates */
+    --roxo: #9B7EDE;
+    --roxo-escuro: #6F52A8;
+    --roxo-claro: #F1ECFA;
+    --texto-roxo: #5F5A66;
+}
+
+
+/* ==============================
+   CABEÇALHO (com fundo de imagem)
+================================= */
+
+.cabecalho {
+    position: relative;
+    width: 100%;
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.35),
+            rgba(255, 255, 255, 0.35)
+        ),
+        url("../img/fundo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: visible;
+}
+
+
+/* ===== ÁREA DA MARCA / LOGO ===== */
+/* → AQUI você controla a ALTURA do fundo */
+
+.cabecalho-marca {
+    position: relative;
+    padding: 90px 20px 60px;   /* topo | laterais | baixo  → altere aqui */
+    background: transparent;
+    border-bottom: none;
+    text-align: center;
+}
+
+.cabecalho-marca .container {
+    position: relative;
+    z-index: 2;
+}
+
+.marca-studio {
+    display: block;
+    width: 350px;
+    max-width: 80%;
+    margin: 0 auto;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.30);
+}
+
+.marca-studio span {
+    color: #D7F0E3;
+}
+
+.marca-studio img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.cabecalho-marca p {
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.90);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.40);
+}
+
+
+/* ===== MENU ===== */
+
+.cabecalho-menu {
+    position: relative;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(255, 255, 255, 0.30);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.30);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cabecalho-menu .cabecalho-container {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cabecalho-menu .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.cabecalho-menu .menu a {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 18px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 30px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+    transition: color 0.3s ease, background-color 0.3s ease,
+                transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cabecalho-menu .menu a:hover {
+    color: #ffffff;
+    background-color: rgba(46, 125, 91, 0.85);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18),
+                0 0 18px rgba(46, 125, 91, 0.25);
+}
+
+.cabecalho-menu .menu a:last-child {
+    background-color: transparent;
+    box-shadow: none;
+}
+
+/* ===== MENU MOBILE ===== */
+
+.menu-mobile {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 30px;
+    color: var(--verde);
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .cabecalho-menu .cabecalho-container {
+        min-height: 60px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 10px;
+        padding: 0 5%;
+    }
+
+    .cabecalho-menu .menu {
+        display: none;
+        position: static;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .cabecalho-menu .menu.ativo {
+        display: flex;
+    }
+
+    .cabecalho-menu .menu-mobile {
+        display: block;
+    }
+
+    .cabecalho-menu .menu a {
+        width: 100%;
+        color: var(--texto);
+        text-shadow: none;
+    }
+}
+
+/* ==============================
+   HERO (página principal)
+================================= */
+
+.hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    padding: 80px 7%;
+}
+
+.hero-texto {
+    width: 50%;
+}
+
+.subtitulo {
+    display: inline-block;
+    color: var(--verde);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(40px, 5vw, 68px);
+    line-height: 1.08;
+    color: var(--verde-escuro);
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    color: var(--verde);
+}
+
+.hero p {
+    max-width: 550px;
+    color: var(--texto);
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+.hero-botoes {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.botao-principal {
+    display: inline-block;
+    background-color: var(--verde);
+    color: white;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.botao-principal:hover {
+    background-color: var(--verde-escuro);
+    transform: translateY(-2px);
+}
+
+.botao-secundario {
+    display: inline-block;
+    color: var(--verde);
+    padding: 13px 20px;
+    border: 1px solid var(--verde);
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.botao-secundario:hover {
+    background-color: var(--verde);
+    color: white;
+}
+
+.hero-imagem img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.imagem-placeholder {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--verde-claro);
+    border-radius: 30px;
+    color: var(--verde);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+/* ==============================
+   TRATAMENTOS
+================================= */
+
+.tratamentos {
+    padding: 100px 7%;
+    background-color: white;
+}
+
+.titulo-secao {
+    text-align: center;
+    max-width: 650px;
+    margin: 0 auto 60px;
+}
+
+.titulo-secao span,
+.titulo-secao .sobre-destaque {
+    color: var(--verde);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.titulo-secao h2 {
+    font-size: 42px;
+    line-height: 1.2;
+    color: var(--verde-escuro);
+    margin: 10px 0 15px;
+}
+
+.titulo-secao p {
+    color: var(--texto);
+}
+
+.cards-tratamentos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background-color: var(--off-white);
+    padding: 30px;
+    border-radius: 20px;
+    transition: 0.3s;
+    border: 1px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #d7e7df;
+    box-shadow: 0 15px 35px rgba(31, 90, 66, 0.08);
+}
+
+.icone {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--verde-claro);
+    border-radius: 15px;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: var(--verde-escuro);
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: var(--texto);
+    font-size: 14px;
+}
+
+
+/* ==============================
+   SOBRE
+================================= */
+
+.sobre {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding: 120px 7%;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+
+.sobre-imagem .imagem-placeholder {
+    height: 450px;
+}
+
+.sobre-texto {
+    width: 50%;
+}
+
+.sobre-texto h2 {
+    color: var(--verde-escuro);
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 10px 0 25px;
+}
+
+.sobre-texto p {
+    color: var(--texto);
+    margin-bottom: 18px;
+}
+
+
+/* ==============================
+   DEPOIMENTOS
+================================= */
+
+.depoimentos {
+    padding: 100px 7%;
+    background-color: white;
+}
+
+.cards-depoimentos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.depoimento {
+    background-color: var(--off-white);
+    padding: 35px;
+    border-radius: 20px;
+}
+
+.estrelas {
+    color: var(--verde);
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.depoimento p {
+    color: var(--texto);
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.depoimento strong {
+    color: var(--verde-escuro);
+}
+
+
+/* ==============================
+   CONTATO
+================================= */
+
+.contato {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    padding: 110px 7%;
+}
+
+.contato-texto {
+    width: 50%;
+}
+
+.contato-texto h2 {
+    font-size: 45px;
+    line-height: 1.2;
+    color: var(--verde-escuro);
+    margin: 10px 0 20px;
+}
+
+.contato-texto > p {
+    color: var(--texto);
+    margin-bottom: 30px;
+}
+
+.informacoes p {
+    color: var(--verde-escuro);
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.formulario {
+    width: 50%;
+    background-color: white;
+    padding: 35px;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(31, 90, 66, 0.08);
+}
+
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    border: 1px solid #dfe4df;
+    background-color: var(--off-white);
+    padding: 14px 16px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    font-family: inherit;
+    outline: none;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: var(--verde);
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+.formulario button {
+    width: 100%;
+    border: none;
+    background-color: var(--verde);
+    color: white;
+    padding: 15px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.formulario button:hover {
+    background-color: var(--verde-escuro);
+}
+
+.formulario input.erro,
+.formulario textarea.erro {
+    border: 2px solid #d9534f;
+    animation: tremor 0.3s;
+}
+
+.formulario button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@keyframes tremor {
+    0%   { transform: translateX(0); }
+    25%  { transform: translateX(-5px); }
+    50%  { transform: translateX(5px); }
+    75%  { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+
+/* ==============================
+   RODAPÉ
+================================= */
+
+.footer {
+    padding: 35px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--verde-escuro);
+    color: white;
+}
+
+.footer .logo {
+    color: white;
+}
+
+.footer .logo span {
+    color: #9dd7bb;
+}
+
+.footer p {
+    font-size: 13px;
+}
+
+
+/* =========================================
+   BOTÃO FLUTUANTE WHATSAPP
+========================================= */
+
+.whatsapp {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #25D366;
+
+    border-radius: 50%;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+
+    z-index: 2000;
+
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.whatsapp img {
+    width: 32px;
+    height: 32px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+.whatsapp:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==============================
+   VOLTAR AO TOPO
+================================= */
+
+.voltar-topo {
+    position: fixed;
+    right: 25px;
+    bottom: 90px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--verde);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: 0.3s;
+    z-index: 1500;
+}
+
+.voltar-topo.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.voltar-topo:hover {
+    background-color: var(--verde-escuro);
+    transform: translateY(-3px);
+}
+
+
+/* ==============================
+   ANIMAÇÃO AO APARECER
+================================= */
+
+.card,
+.depoimento,
+.sobre-texto,
+.contato-texto {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.card.mostrar,
+.depoimento.mostrar,
+.sobre-texto.mostrar,
+.contato-texto.mostrar {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==============================
+   RESPONSIVIDADE - PÁGINA PRINCIPAL
+================================= */
+
+@media (max-width: 1000px) {
+
+    .cards-tratamentos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        gap: 30px;
+    }
+
+    .hero-texto {
+        width: 55%;
+    }
+
+    .hero-imagem {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        flex-direction: column;
+        padding: 70px 5%;
+        min-height: auto;
+    }
+
+    .hero-texto,
+    .hero-imagem {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-botoes {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-imagem {
+        margin-top: 20px;
+    }
+
+    .cards-tratamentos {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre {
+        flex-direction: column;
+        padding: 80px 5%;
+        gap: 50px;
+    }
+
+    .sobre-imagem,
+    .sobre-texto {
+        width: 100%;
+    }
+
+    .cards-depoimentos {
+        grid-template-columns: 1fr;
+    }
+
+    .contato {
+        flex-direction: column;
+        padding: 80px 5%;
+        gap: 50px;
+    }
+
+    .contato-texto,
+    .formulario {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .titulo-secao h2,
+    .sobre-texto h2,
+    .contato-texto h2 {
+        font-size: 32px;
+    }
+
+    .hero-botoes {
+        width: 100%;
+    }
+
+    .botao-principal,
+    .botao-secundario {
+        width: 100%;
+        text-align: center;
+    }
+
+    .whatsapp {
+        width: 55px;
+        height: 55px;
+        right: 18px;
+        bottom: 18px;
+    }
+
+    .whatsapp span {
+        display: none;
+    }
+}
+
+
+/* ==============================
+   PÁGINA FISIOTERAPEUTA
+================================= */
+
+
+.perfil {
+    padding: 90px 0;
+    background: linear-gradient(135deg, var(--off-white) 0%, #ffffff 100%);    
+}
+
+.perfil-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.perfil-imagem {
+    width: 35%;
+    position: relative;
+}
+
+.perfil-imagem::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--verde-claro);
+    border-radius: 20px;
+    left: 18px;
+    top: 18px;
+    z-index: 0;
+}
+
+.perfil-imagem img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 20px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+    background-color: var(--off-white);
+}
+
+.perfil-texto {
+    width: 55%;
+    padding: 15px;
+}
+
+.perfil-texto .sobre-destaque {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: var(--verde);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.perfil-texto h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    color: var(--verde-escuro);
+    margin-bottom: 12px;
+}
+
+.perfil-texto h2 {
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--verde);
+    margin-bottom: 25px;
+}
+
+.perfil-texto p {
+    max-width: 570px;
+    color: var(--texto);
+    line-height:1.9;
+    font-size: 17px;
+    margin-bottom: 35px;
+}
+
+/* Formação */
+
+.formacao-profissional {
+    padding: 100px 0;
+    background-color: var(--branco);
+    padding: 10px;
+}
+
+.formacao-card {
+    max-width: 750px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    padding: 35px;
+    background-color: var(--verde-claro);
+    border-radius: 25px;
+    border: 1px solid rgba(46, 125, 91, 0.12);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+}
+
+.formacao-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
+}
+
+.formacao-icone {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--branco);
+    border-radius: 15px;
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.formacao-card h3 {
+    color: var(--verde-escuro);
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.formacao-card p {
+    color: var(--texto);
+    line-height: 1.7;
+    margin-bottom: 5px;
+}
+
+/* Sobre a profissional */
+
+.sobre-profissional {
+    padding: 100px 0;
+    background-color: var(--off-white);
+    padding: 10px;
+}
+
+.texto-profissional {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.texto-profissional h2 {
+    color: var(--verde-escuro);
+    font-size: 38px;
+    margin: 12px 0 25px;
+}
+
+.texto-profissional p {
+    color: var(--texto);
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+/* Qualificações */
+
+.qualificacoes {
+    padding: 100px 0;
+    background-color: var(--branco);
+}
+
+.qualificacoes .titulo-secao p {
+    max-width: 650px;
+    margin: 20px auto 0;
+    color: var(--texto);
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* CTA */
+
+.cta-profissional {
+    padding: 100px 20px;
+    text-align: center;
+    background-color: var(--verde-claro);
+}
+
+.cta-profissional h2 {
+    color: var(--verde-escuro);
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.cta-profissional p {
+    color: var(--texto);
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+/* Responsivo Fisioterapeuta */
+
+@media (max-width: 900px) {
+    .perfil-container {
+        gap: 50px;
+    }
+
+    .perfil-texto h1 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 768px) {
+    .perfil {
+        padding: 60px 0;
+    }
+
+    .perfil-container {
+        flex-direction: column;
+        gap: 45px;
+    }
+
+    .perfil-imagem,
+    .perfil-texto {
+        width: 100%;
+    }
+
+    .perfil-imagem img {
+        height: 450px;
+    }
+
+    .perfil-imagem::after {
+        left: 10px;
+        top: 10px;
+    }
+
+    .perfil-texto h1 {
+        font-size: 38px;
+    }
+
+    .perfil-texto h2 {
+        font-size: 22px;
+    }
+
+    .titulo-secao h2,
+    .texto-profissional h2 {
+        font-size: 31px;
+    }
+
+    .formacao-card {
+        padding: 25px;
+    }
+
+    .cta-profissional h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 500px) {
+    .perfil-imagem img {
+        height: 380px;
+    }
+
+    .perfil-texto h1 {
+        font-size: 32px;
+    }
+
+    .perfil-texto p {
+        font-size: 16px;
+    }
+
+    .formacao-card {
+        flex-direction: column;
+    }
+
+    .titulo-secao h2,
+    .texto-profissional h2 {
+        font-size: 28px;
+    }
+}
+
+
+/* ==============================
+   PÁGINA PILATES
+================================= */
+
+.pilates-hero {
+    padding: 100px 0;
+    background-color: var(--roxo-claro);
+}
+
+.pilates-hero-container {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    padding-left: 20px;
+}
+
+.pilates-hero-texto {
+    width: 50%;
+}
+
+.pilates-destaque {
+    display: inline-block;
+    margin-bottom: 12px;
+    color: var(--roxo-escuro);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.pilates-hero h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    color: var(--roxo-escuro);
+    margin-bottom: 25px;
+}
+
+.pilates-hero h1 span {
+    display: block;
+    color: var(--roxo);
+}
+
+.pilates-hero p {
+    max-width: 550px;
+    color: var(--texto-roxo);
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.pilates-hero-imagem {
+    width: 50%;
+    padding-right: 30px;
+}
+
+.pilates-hero-imagem img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 30px;
+    
+}
+
+.botao-pilates {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--roxo);
+    color: white;
+
+    padding: 15px 30px;
+    border-radius: 12px;
+    border: 2px solid var(--roxo);
+
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+/* Quando passar o mouse */
+.botao-pilates:hover {
+    transform: translateY(-3px);
+
+    background: transparent;
+    color: var(--roxo);
+
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+}
+
+/* Quando clicar */
+.botao-pilates:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.botao-pilates:hover {
+    background-color: var(--roxo-escuro);   
+}
+
+/* Benefícios */
+
+.pilates-beneficios {
+    padding: 90px 0;
+    background-color: var(--branco);
+    
+}
+
+.titulo-pilates {
+    text-align: center;
+    margin-bottom: 50px;
+    
+}
+
+.titulo-pilates h2 {
+    color: var(--roxo-escuro);
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+.beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.beneficio-card {
+    padding: 30px 25px;
+    background-color: var(--roxo-claro);
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.beneficio-card:hover {
+    transform: translateY(-8px);
+}
+
+.beneficio-icone {
+    font-size: 38px;
+    margin-bottom: 18px;
+}
+
+.beneficio-card h3 {
+    color: var(--roxo-escuro);
+    margin-bottom: 12px;
+}
+
+.beneficio-card p {
+    color: var(--texto-roxo);
+    line-height: 1.6;
+}
+
+/* Para quem é */
+
+.pilates-indicado {
+    padding: 90px 0;
+    background-color: var(--roxo-claro);
+    padding: 20px;
+}
+
+.indicado-container {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+
+.indicado-imagem {
+    width: 50%;
+}
+
+.indicado-imagem img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.indicado-texto {
+    width: 50%;
+}
+
+.indicado-texto h2 {
+    color: var(--roxo-escuro);
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.indicado-texto p {
+    color: var(--texto-roxo);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.indicado-texto ul {
+    list-style: none;
+    padding: 0;
+}
+
+.indicado-texto li {
+    margin-bottom: 15px;
+    color: var(--texto-roxo);
+    font-weight: 500;
+}
+
+/* Processo */
+
+.pilates-processo {
+    padding: 90px 0;
+    background-color: var(--branco);
+}
+
+.processo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.processo-item {
+    padding: 30px;
+    border: 1px solid #E5DDF4;
+    border-radius: 20px;
+    transition: 0.3s;
+    margin-left: 10px;
+    margin-left: 10px;
+}
+
+.processo-item:hover {
+    transform: translateY(-5px);
+}
+
+.processo-item > span {
+    display: inline-flex;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--roxo);
+    color: white;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.processo-item h3 {
+    color: var(--roxo-escuro);
+    margin-bottom: 10px;
+}
+
+.processo-item p {
+    color: var(--texto-roxo);
+    line-height: 1.6;
+}
+
+/* CTA Pilates */
+
+.pilates-cta {
+    padding: 90px 20px;
+    text-align: center;
+    background-color: var(--roxo-claro);
+}
+
+.pilates-cta h2 {
+    color: var(--roxo-escuro);
+    font-size: 38px;
+    margin-bottom: 15px;
+}
+
+.pilates-cta p {
+    color: var(--texto-roxo);
+    margin-bottom: 30px;
+}
+
+/* Responsivo Pilates */
+
+@media (max-width: 1000px) {
+    .beneficios-grid,
+    .processo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pilates-hero {
+        padding: 60px 0;
+    }
+
+    .pilates-hero-container,
+    .indicado-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .pilates-hero-texto,
+    .pilates-hero-imagem,
+    .indicado-imagem,
+    .indicado-texto {
+        width: 100%;
+    }
+
+    .pilates-hero h1 {
+        font-size: 40px;
+    }
+
+    .pilates-hero-imagem img {
+        height: 400px;
+    }
+
+    .indicado-imagem img {
+        height: 350px;
+    }
+
+    .titulo-pilates h2,
+    .indicado-texto h2 {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .beneficios-grid,
+    .processo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pilates-hero h1 {
+        font-size: 34px;
+    }
+
+    .pilates-cta h2 {
+        font-size: 30px;
+    }
+}
+
+/* =========================================
+   CABEÇALHO INDEPENDENTE - FISIOTERAPEUTA
+   (estrutura simples: logo + menu)
+========================================= */
+
+.cabecalho-fisioterapeuta {
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.35),
+            rgba(255, 255, 255, 0.35)
+        ),
+        url("../img/fundo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* → AQUI controla a ALTURA do fundo */
+    padding: 10px 0;          /* topo e baixo */
+}
+
+.cabecalho-fisioterapeuta .cabecalho-container {
+    min-height: 80px;         /* altura mínima da barra do menu */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+}
+
+/* Logo */
+.cabecalho-fisioterapeuta .logo img {
+    height: 180px;
+    width: auto;
+    display: block;
+    
+}
+
+.cabecalho-fisioterapeuta .logo span {
+    color: #D7F0E3;
+}
+
+/* Menu */
+.cabecalho-fisioterapeuta .menu {
+    display: flex;
+    gap: 25px;
+}
+
+.cabecalho-fisioterapeuta .menu a {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+    transition: 0.3s;
+}
+
+.cabecalho-fisioterapeuta .menu a:hover {
+    color: #D7F0E3;
+}
+
+/* Botão mobile */
+.cabecalho-fisioterapeuta .menu-mobile {
+    color: #ffffff;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .cabecalho-fisioterapeuta {
+        padding: 25px 0;
+    }
+
+    .cabecalho-fisioterapeuta .cabecalho-container {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 0 5%;
+    }
+
+    .cabecalho-fisioterapeuta .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 0;
+    }
+
+    .cabecalho-fisioterapeuta .menu.ativo {
+        display: flex;
+    }
+
+    .cabecalho-fisioterapeuta .menu-mobile {
+        display: block;
+    }
+}
+
+/* =========================================
+   CABEÇALHO INDEPENDENTE - PÁGINA PILATES
+========================================= */
+
+.header-pilates {
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.25),
+            rgba(255, 255, 255, 0.25)
+        ),
+        url("../img/fundo2.jpg");   /* ou o caminho da imagem 4K se preferir */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* → AQUI controla a ALTURA do fundo */
+    padding: 10px 0;
+}
+
+.header-pilates .header-container {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    gap: 20px;
+}
+
+/* Logo */
+.header-pilates .logo img {
+    height: 180px;
+    width: auto;
+    display: block;
+}
+
+/* Menu */
+.header-pilates .menu {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header-pilates .menu a {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+    transition: 0.3s;
+}
+
+.header-pilates .menu a:hover {
+    color: #bc63b9;
+}
+
+/* Destaque do link Pilates */
+.header-pilates .menu-pilates {
+    color: #b970c4 !important;
+}
+
+/* Botão Agendar */
+.header-pilates .botao-header {
+    background-color: var(--roxo);
+    color: white;
+    padding: 11px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.header-pilates .botao-header:hover {
+    background-color: var(--roxo-escuro);
+    transform: translateY(-2px);
+}
+
+/* Botão mobile */
+.header-pilates .menu-mobile {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 28px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+    .header-pilates .menu {
+        gap: 14px;
+    }
+
+    .header-pilates .botao-header {
+        padding: 10px 16px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-pilates {
+        padding: 22px 0;
+    }
+
+    .header-pilates .header-container {
+        flex-wrap: wrap;
+        padding: 0 5%;
+        gap: 15px;
+    }
+
+    .header-pilates .menu-mobile {
+        display: block;
+        margin-left: auto;
+    }
+
+    .header-pilates .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 15px 0;
+        order: 3;
+    }
+
+    .header-pilates .menu.ativo {
+        display: flex;
+    }
+
+    .header-pilates .botao-header {
+        display: none; /* esconde o botão no mobile (opcional) */
+    }
+}
+
+/* =========================================
+   BOTÃO VOLTAR AO TOPO
+========================================= */
+
+#voltarTopo {
+    position: fixed;
+
+    right: 25px;
+    bottom: 95px; /* fica acima do WhatsApp */
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 50%;
+
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+
+    transition: all 0.3s ease;
+
+    z-index: 998;
+}
+
+#voltarTopo.mostrar {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+#voltarTopo:hover {
+    background: #333;
+    color: white;
+
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.30);
+}
+
+#voltarTopo:active {
+    transform: translateY(0);
+}
+
+/* RODAPÉ EXCLUSIVO DA PÁGINA PILATES */
+body:has(.header-pilates) .footer {
+    background-color: var(--roxo-claro);
+    color: var(--roxo-escuro);
+}
+
+body:has(.header-pilates) .footer p {
+    color: var(--texto-roxo);
+}
+
+body:has(.header-pilates) .footer .logo span {
+    color: var(--roxo);
+}
